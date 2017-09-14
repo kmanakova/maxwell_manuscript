@@ -1,0 +1,117 @@
+% SIAM Article Template
+\documentclass[review]{siamart1116}
+
+% Information that is shared between the article and the supplement
+% (title and author information, macros, packages, etc.) goes into
+% ex_shared.tex. If there is no supplement, this file can be included
+% directly.
+
+% Packages and macros go here
+\usepackage{lipsum}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{algorithmic}
+\ifpdf
+  \DeclareGraphicsExtensions{.eps,.pdf,.png,.jpg}
+\else
+  \DeclareGraphicsExtensions{.eps}
+\fi
+
+%strongly recommended
+\numberwithin{theorem}{section}
+\numberwithin{equation}{section}
+
+% Declare title and authors, without \thanks
+\newcommand{\TheTitle}{Analysis of traveling waves in a non-local model of cell surface mechanics} 
+\newcommand{\TheAuthors}{K. Manakova, Y. Mori, and J. Allard}
+
+% Sets running headers as well as PDF title and authors
+\headers{Traveling waves in nonlocal cell surface model}{\TheAuthors}
+
+% Title. If the supplement option is on, then "Supplementary Material"
+% is automatically inserted before the title.
+\title{{\TheTitle}\thanks{Submitted to the editors DATE.
+\funding{This work was funded by NSF CAREER Award DMS-1454739 to JA}}}
+
+% Authors: full names plus addresses.
+\author{
+  Kathryn Manakova\thanks{Center for Complex Biological Systems, University of California Irvine.}
+  \and
+  Yoichiro Mori\thanks{Department of  Mathematics, University of Minnesota (\email{ymori@umn.edu}).}
+  \and
+  Jun Allard\thanks{Department of Mathematics, Department of Physics and Astronomy, Center for Complex Biological Systems, University of California Irvine (\email{jun.allard@uci.edu})}
+}
+
+\usepackage{amsopn}
+\DeclareMathOperator{\diag}{diag}
+
+% Optional PDF information
+\ifpdf
+\hypersetup{
+  pdftitle={\TheTitle},
+  pdfauthor={\TheAuthors}
+}
+\fi
+
+% The next statement enables references to information in the
+% supplement. See the xr-hyperref package for details.
+
+%\externaldocument{ex_supplement}
+
+% FundRef data to be entered by SIAM
+%<funding-group>
+%<award-group>
+%<funding-source>
+%<named-content content-type="funder-name"> 
+%</named-content> 
+%<named-content content-type="funder-identifier"> 
+%</named-content>
+%</funding-source>
+%<award-id> </award-id>
+%</award-group>
+%</funding-group>
+\def\koff{k_{\mbox{\scriptsize off}}}
+\def\kon{k_{\mbox{\scriptsize on}}}
+
+\begin{document}
+
+\maketitle
+
+% REQUIRED
+\begin{abstract}
+  This is an example SIAM \LaTeX\ article. This can be used as a
+  template for new articles.  Abstracts must be able to stand alone
+  and so cannot contain citations to the paper's references,
+  equations, etc.  An abstract must consist of a single paragraph and
+  be concise. Because of online formatting, abstracts must appear as
+  plain as possible. Any equations should be inline.
+\end{abstract}
+
+% REQUIRED
+\begin{keywords}
+  example, \LaTeX
+\end{keywords}
+
+% REQUIRED
+\begin{AMS}
+  68Q25, 68R10, 68U05
+\end{AMS}
+
+
+\input{Introduction}
+\input{Model}
+\input{ODEsystem}
+\input{PDEsystem}
+\input{NonlocalMaxwellContent.tex}
+
+\appendix
+\section{An example appendix} 
+\lipsum[71]
+
+\section*{Acknowledgments}
+We would like to acknowledge .
+
+\bibliographystyle{siamplain}
+\bibliography{references}
+\end{document}
