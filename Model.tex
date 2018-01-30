@@ -6,7 +6,7 @@ The eukaryotic cell membrane acts as the main barrier between the cell and the s
 \begin{figure}
    \begin{center}
    %\captionsetup{width=linewidth}
-	\includegraphics*[width=8.5cm]{figs/figSchematic.pdf}
+	\includegraphics[width=8.5cm]{figs/figSchematic.pdf}
       \caption{(A) Micrograph of a single bleb, induced by laser ablation on the surface of a HeLa cell, 43 seconds after initial formation. Taken from \cite{Biro:2013bk}. (B) Model components. At each location on the surface of the cell $x$, four quantities are represented: The height of the membrane $y_M(x,t)$, the height and thickness of the actin cortex $y_C(x,t)$ and $C(x,t)$ respectively, and the local density of membrane-cortex anchoring proteins, $A(x,t)$. Note that the schematic shows the range of possible model states (e.g., thick or thin cortex, protruding or proximal membrane), while specific predicted dynamics will be determined by simulation.}
       \label{fig::schematic}
    \end{center}
@@ -15,13 +15,11 @@ The eukaryotic cell membrane acts as the main barrier between the cell and the s
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-Our minimal model, summarized schematically in Fig.~\ref{fig:modelSchematic}, consists of four fundamental dynamic variables, as functions of time $t$ and location on the two-dimensional cell surface, parametrized by $(x_1, x_2)$. The actin cortex, has local height described by $Y_C(x_1,x_2,t)$ measured normal to the mean cell surface from its steady-state configuration $Y_C=0$, and thickness $C(x_1,x_2,t)$. The cortical-cytoplasmic actin cytoskeleton can in principle have complicated morphologies that cannot be accounted for by a single location $Y_C$, so we think of $Y_C$ as the weighted average position of maximal cortical actin. Membrane-cortex adhesions are described by density $A(x_1,x_2,t)$ in molecules $\text{nm}^2$. Finally, the plasma membrane has local height $Y_M(x_1,x_2,t)$.
+Our minimal model, summarized schematically in Fig.~\ref{fig::schematic}, consists of four fundamental dynamic variables, as functions of time $t$ and location on the two-dimensional cell surface, parametrized by $(x_1, x_2)$. The actin cortex, has local height described by $Y_C(x_1,x_2,t)$ measured normal to the mean cell surface from its steady-state configuration $Y_C=0$, and thickness $C(x_1,x_2,t)$. The cortical-cytoplasmic actin cytoskeleton can in principle have complicated morphologies that cannot be accounted for by a single location $Y_C$, so we think of $Y_C$ as the weighted average position of maximal cortical actin. Membrane-cortex adhesions are described by density $A(x_1,x_2,t)$ in molecules/ $\text{nm}^2$. Finally, the plasma membrane has local height $Y_M(x_1,x_2,t)$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Derivation, reduction to one dimensions, and non-dimensionalization}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsection{Derivation, reduction to one dimensions, and non-dimensionalization}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\subsection{Derivation, and non-dimensionalization}
 The dynamics of the actin cortex and  density of adhesions attaching cortex and membrane are governed by
 \begin{align}
 \dot{C} &= \omega A - \gamma C \label{eq::CDotequation}\\
@@ -50,7 +48,10 @@ The resulting dimensionless system is:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Formulation as non-local integro-PDE}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-This 
+Equations ~\ref{eq::nondimc} - ~\ref{eq::nondimyM} can be represented as an integro-PDE. Eq. ~\ref{eq::nondimyM} is a self adjoint. It is very difficult or impossible to find a closed form solution. If we assume a solution exists and has the form $y(x,t) = \int_x h(s,t) ds + r(x,t)$, the we can rewrite the system as:
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Connections to a larger class of models arising in cell mechanics}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
